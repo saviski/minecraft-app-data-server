@@ -1,4 +1,6 @@
 const resourcepacks = require('./resourcepacks.js')
+const launcher = require('./launcher.js')
+//const skin = require('./skin.js')
 const http = require('http')
 const https = require('https')
 const fs = require('fs')
@@ -41,15 +43,15 @@ app.get('/', async (req, res) => {
 
 app.get(
   '/profile',
-  async (req, res) => await res.json(resourcepacks.getProfile())
+  async (req, res) => await res.json(launcher.getProfile())
 )
 
 app.post(['/applyskin', '/profile/skin'], async (req, res) => { })
 
 app
   .route('/launcher/skins')
-  .get(async (req, res) => await res.json(resourcepacks.getLauncherSkins()))
-  .put(async (req, res) => await resourcepacks.addLauncherSkin(req.body))
+  .get(async (req, res) => await res.json(launcher.getLauncherSkins()))
+  .put(async (req, res) => await launcher.addLauncherSkin(req.body))
 
 app.get('/:name', async (req, res) => {
   res.send(await resourcepacks.listResourcePackFiles(req.params.name))
