@@ -1,0 +1,37 @@
+{
+  "name": "local-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "pkg ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "pkg": "^5.4.1",
+    "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "5.0.0-alpha.8",
+    "helmet": "^4.6.0",
+    "jszip": "^3.7.1",
+    "mkdirp": "^1.0.4"
+  },
+  "pkg": {
+    "outputPath": "bin"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "proseWrap": "never",
+    "arrowParens": "avoid",
+    "endOfLine": "auto",
+    "singleQuote": true
+  }
+}
