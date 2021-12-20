@@ -5,7 +5,6 @@ const http = require('http')
 const https = require('https')
 const fs = require('fs')
 const path = require('path')
-const util = require('util')
 
 const PORT = 22549
 const SECURE_PORT = 22443
@@ -30,6 +29,8 @@ if (!DEBUG) {
   app.use(helmet())
   app.use(cors({ origin: validReferer }))
 }
+
+app.use(express.text()).use(express.json())
 
 if (DEBUG)
   app.all('*', function (req, res, next) {

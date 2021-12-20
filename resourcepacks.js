@@ -1,6 +1,5 @@
 VERSION = 10
 
-const https = require('https')
 const fs = require('fs').promises
 const path = require('path')
 const os = require('os')
